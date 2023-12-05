@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListBarang;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Content;
 use App\Http\Controllers\Form;
@@ -19,3 +20,6 @@ Route::get('/',[Content::class,'index']);
 Route::get('/form',[Form::class,'index']);
 
 Route::post('/proses',[Form::class,'store']);
+
+Route::get('/edit/{id}',[ListBarang::class,'edit']);
+Route::post('/update',[ListBarang::class,'update']);

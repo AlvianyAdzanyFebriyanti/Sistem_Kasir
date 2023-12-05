@@ -48,6 +48,7 @@ class Form extends Controller
             $totalterbaru = $total - $diskon;
         }
 
+        /*
         echo"             OUTPUT               <br>";
         echo"================================== <br>";
         echo"Product Code :" .$kodeBarang ."<br>";
@@ -58,7 +59,7 @@ class Form extends Controller
         echo"Total        :" .$total ."<br>";
         echo"Discount     :" .$diskon ."<br>";
         echo"TOTAL        :" .$totalterbaru ."<br>";
-
+        */
 
         Barang::create([
             'Kode_Barang' => $request-> kodeBarang,
@@ -70,6 +71,9 @@ class Form extends Controller
             'Diskon' => $diskon,
             'Total_Terbaru' => $totalterbaru
         ]);
+
+        $data_product = Barang::all();
+        return view('list_data',compact('data_product'));
     }
 
     /**
