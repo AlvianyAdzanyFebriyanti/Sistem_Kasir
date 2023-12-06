@@ -20,4 +20,6 @@ class Barang extends Model
         'Diskon',
         'Total_Terbaru',
     ];
+
+    protected $primary_key = ('id');
 }

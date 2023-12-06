@@ -3,7 +3,7 @@
 @section('form')
 <div class="col-lg-12" style="background-color: #F3EEEA; padding-top: 3%; padding-bottom: 1%;" >
     <br>
-    <form action="/update" method="post" class="forms-sample">
+    <form action="{{url('update').'/'. $data_product[0]->id}}" method="post" class="forms-sample">
         @csrf
                 <div class="col-md-6 grid-margin stretch-card">
                   <div class="card">

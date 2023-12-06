@@ -52,10 +52,10 @@ class ListBarang extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, string $id)
     {
         $data =[
-            0 => $request-> kodeBarang,
+            'Kode_Barang' => $request-> kodeBarang,
             'Nama_Barang'=> $request-> namaBarang,
             'Jenis_Barang' => $request-> jenisBarang,
             'QTY' => $request-> qty,
@@ -65,9 +65,9 @@ class ListBarang extends Controller
             'Total_Terbaru' => $request-> total_terbaru
         ];
 
-        $proses = Barang::find($data[0])->update($data);
+        $data_product = Barang::find($id)->update($data);
 
-        return view('list_data',compact('data_product'));
+        return redirect('/view');
     }
 
     /**
@@ -75,6 +75,7 @@ class ListBarang extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Barang::find($id)->delete();
+        return redirect('/view');
     }
 }

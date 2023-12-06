@@ -36,6 +36,8 @@
                 <td>{{ $key -> Total_Terbaru}}</td>
                 <td> 
                     <button type="button" onclick="window.location.href='{{url('edit/'.$key->Kode_Barang)}}';" class="btn btn-warning">Edit</button>
+                    ||
+                    <button type="button" onclick="window.location.href='{{url('hapus/'.$key->id)}}';" class="btn btn-danger">Hapus</button>
                 </td>
               </tr>
               @endforeach

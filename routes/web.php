@@ -21,5 +21,8 @@ Route::get('/form',[Form::class,'index']);
 
 Route::post('/proses',[Form::class,'store']);
 
+
+Route::get('/view',[ListBarang::class,'index']);
 Route::get('/edit/{id}',[ListBarang::class,'edit']);
-Route::post('/update',[ListBarang::class,'update']);
+Route::post('/update/{id}',[ListBarang::class,'update']);
+Route::get('/hapus/{id}',[ListBarang::class,'destroy']);
